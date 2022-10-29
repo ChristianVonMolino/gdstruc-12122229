@@ -1,29 +1,33 @@
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
-public class  Main {
-
-    //random generator
+public class Main {
     public static void main(String[] args) {
-        Random rand = new Random();
-        int min = 1;
-        int max = 30;
-        int random_int = (int) Math.floor(Math.random() * (max - min) + min);
+        CardStacks stack = new CardStacks();
 
-    List<Cards> cardsList =new ArrayList<>(30){
-    CardStacks.add(new Cards(1, "Ace", "Spades"));
+        for (int i = 0; i < 30; i++)
+        {
+            Random rand = new Random();
+            int min = 1;
+            int max = 5;
+            int random_int = (int)Math.floor(Math.random()*(max-min+1)+min);
+        }
+        // push elements to our stack
+        stack.push(new Cards(1, "Ace", "Who"));
+        stack.push(new Cards(2, "Diamond", "Why"));
+        stack.push(new Cards(3, "Clover", "When"));
+        stack.push(new Cards(4, "Joker", "Where"));
+        stack.push(new Cards(5, "Spades", "How"));
+        // print elements
+        stack.printStack();
 
+        // pop the top element
+        stack.pop();
 
+        // print elements
+        stack.printStack();
 
+        // peek
+        System.out.println("Current: " + stack.peek());
 
-    //This block allow users to input command
-    System.out.println("Input Command: ");
-
-    Scanner scanner = new Scanner(System.in);
-
-    String input = scanner.nextLine();
-    System.out.println("You choose " + input);
     }
-
 }

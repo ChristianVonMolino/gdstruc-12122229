@@ -1,10 +1,9 @@
-public class Cards extends CardStacks
+public class Cards
 {
 
     private static final int capacity = 30;
 
     //Card names and ID
-
     private int cardId;
     private String cardName;
     private String cardSuit;
@@ -36,9 +35,5 @@ public class Cards extends CardStacks
     {
         return cardSuit;
     }
-    public void setCardSuit(String cardSuit)
-    {
-        this.cardSuit =  cardSuit;
-    }
-
+    public void setCardSuit(String cardSuit) {this.cardSuit =  cardSuit;}
 }
